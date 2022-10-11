@@ -145,7 +145,7 @@ ul li button.nav-link.active {
   white-space: nowrap;
   margin: 0 auto;
   letter-spacing: 0.15em;
-  animation: typing 2s steps(40, end), blink-caret 0.75s step-start infinite;
+  animation: typing 2.2s steps(40, end), blink-caret 0.75s step-start infinite;
   font-family: "Comic Neue", cursive;
-  -webkit-animation: typing 2s steps(40, end), blink-caret 0.75s step-start infinite;
+  -webkit-animation: typing 2.2s steps(40, end), blink-caret 0.75s step-start infinite;
 }
