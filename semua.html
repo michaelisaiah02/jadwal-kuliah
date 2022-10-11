@@ -1,0 +1,22 @@
+<div class="form-check form-switch fs-3">
+  <input class="form-check-input" type="checkbox" role="switch" id="tampilan" />
+  <label class="form-check-label" for="tampilan">Tampilan Tabel</label>
+</div>
+<div class="tab-content" id="nav-tabContent">
+  <div class="tab-pane fade show active" id="tampil" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0"></div>
+</div>
+<script>
+  $(document).ready(function () {
+    $("#tampil").load("tampilan/tabel.html");
+    $("input").change(function () {
+      var input = $(this);
+      if (input.is(":checked")) {
+        $("label").html("Tampilan Kartu");
+        $("#tampil").load("tampilan/kartu.html");
+      } else {
+        $("label").html("Tampilan Tabel");
+        $("#tampil").load("tampilan/tabel.html");
+      }
+    });
+  });
+</script>

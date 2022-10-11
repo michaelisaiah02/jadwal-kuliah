@@ -1,0 +1,89 @@
+<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+  <li class="nav-item" role="presentation">
+    <button class="nav-link active" id="pills-senin-tab" data-bs-toggle="pill" data-bs-target="#pills-senin" type="button" role="tab" aria-controls="pills-senin" aria-selected="true">Senin</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="pills-selasa-tab" data-bs-toggle="pill" data-bs-target="#pills-selasa" type="button" role="tab" aria-controls="pills-selasa" aria-selected="false">Selasa</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="pills-rabu-tab" data-bs-toggle="pill" data-bs-target="#pills-rabu" type="button" role="tab" aria-controls="pills-rabu" aria-selected="false">Rabu</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="pills-kamis-tab" data-bs-toggle="pill" data-bs-target="#pills-kamis" type="button" role="tab" aria-controls="pills-kamis" aria-selected="false">Kamis</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="pills-jumat-tab" data-bs-toggle="pill" data-bs-target="#pills-jumat" type="button" role="tab" aria-controls="pills-jumat" aria-selected="false">Jum'at</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="pills-sabtu-tab" data-bs-toggle="pill" data-bs-target="#pills-sabtu" type="button" role="tab" aria-controls="pills-sabtu" aria-selected="false">Sabtu</button>
+  </li>
+</ul>
+<div class="tab-content" id="pills-tabContent">
+  <div class="tab-pane fade show active" id="pills-senin" role="tabpanel" aria-labelledby="pills-senin-tab" tabindex="0">
+    <div class="row justify-content-center" id="senin"></div>
+  </div>
+  <div class="tab-pane fade" id="pills-selasa" role="tabpanel" aria-labelledby="pills-selasa-tab" tabindex="0">
+    <div class="row justify-content-center" id="selasa"></div>
+  </div>
+  <div class="tab-pane fade" id="pills-rabu" role="tabpanel" aria-labelledby="pills-rabu-tab" tabindex="0">
+    <div class="row justify-content-center" id="rabu"></div>
+  </div>
+  <div class="tab-pane fade" id="pills-kamis" role="tabpanel" aria-labelledby="pills-kamis-tab" tabindex="0">
+    <div class="row justify-content-center" id="kamis"></div>
+  </div>
+  <div class="tab-pane fade" id="pills-jumat" role="tabpanel" aria-labelledby="pills-jumat-tab" tabindex="0">
+    <div class="row justify-content-center" id="jumat"></div>
+  </div>
+  <div class="tab-pane fade" id="pills-sabtu" role="tabpanel" aria-labelledby="pills-sabtu-tab" tabindex="0">
+    <div class="row justify-content-center" id="sabtu"></div>
+  </div>
+</div>
+<script>
+  var hari = new Date();
+  switch (hari.getDay()) {
+    case 1:
+      $(".tab-content .tab-pane").removeClass("show active");
+      $(".tab-content .tab-pane#pills-senin").addClass("show active");
+      $("ul li button").removeClass("active");
+      $("ul li button#pills-senin-tab").addClass("active");
+      break;
+    case 2:
+      $(".tab-content .tab-pane").removeClass("show active");
+      $(".tab-content .tab-pane#pills-selasa").addClass("show active");
+      $("ul li button").removeClass("active");
+      $("ul li button#pills-selasa-tab").addClass("active");
+      break;
+    case 3:
+      $(".tab-content .tab-pane").removeClass("show active");
+      $(".tab-content .tab-pane#pills-rabu").addClass("show active");
+      $("ul li button").removeClass("active");
+      $("ul li button#pills-rabu-tab").addClass("active");
+      break;
+    case 4:
+      $(".tab-content .tab-pane").removeClass("show active");
+      $(".tab-content .tab-pane#pills-kamis").addClass("show active");
+      $("ul li button").removeClass("active");
+      $("ul li button#pills-kamis-tab").addClass("active");
+      break;
+    case 5:
+      $(".tab-content .tab-pane").removeClass("show active");
+      $(".tab-content .tab-pane#pills-jumat").addClass("show active");
+      $("ul li button").removeClass("active");
+      $("ul li button#pills-jumat-tab").addClass("active");
+      break;
+    case 6:
+      $(".tab-content .tab-pane").removeClass("show active");
+      $(".tab-content .tab-pane#pills-sabtu").addClass("show active");
+      $("ul li button").removeClass("active");
+      $("ul li button#pills-sabtu-tab").addClass("active");
+      break;
+    default:
+      break;
+  }
+  $("#senin").load("hari/senin.html");
+  $("#selasa").load("hari/selasa.html");
+  $("#rabu").load("hari/rabu.html");
+  $("#kamis").load("hari/kamis.html");
+  $("#jumat").load("hari/jumat.html");
+  $("#sabtu").load("hari/sabtu.html");
+</script>

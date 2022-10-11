@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jadwal Kuliah</title>
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">Jadwal Kuliah</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarOffcanvas" aria-controls="navbarOffcanvas">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="navbarOffcanvas" aria-labelledby="navbarOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+            <button type="button" class="btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body justify-content-end">
+            <ul class="navbar-nav" style="--bs-scroll-height: 100px">
+              <li class="nav-item mx-xxl-5 mx-xl-4 mx-lg-3 mx-md-1">
+                <a class="nav-link" id="semua" href="#">Semua Jadwal</a>
+              </li>
+              <li class="nav-item ms-xxl-5 ms-xl-4 ms-lg-3 ms-md-1">
+                <a class="nav-link active" id="harian" href="#">Jadwal Harian</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="row">
+        <div class="col" id="konten"></div>
+      </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-bottom">
+      <div class="container justify-content-center">
+        <p class="fs-5 text-light">
+          Dibuat oleh Michael
+          <a href="https://www.instagram.com/michaelisaiah02/">
+            <img src="img/michael.jpg" class="img-thumbnail rounded-circle" alt="Michael" width="50" />
+          </a>
+        </p>
+      </div>
+    </nav>
+    <script src="js/bootstrap.bundle.js"></script>
+    <script src="js/jquery-3.6.1.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
