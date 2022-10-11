@@ -1,21 +1,50 @@
-@import url("https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Comic+Neue&family=Dangrek&family=Dosis&family=Nabla&family=Source+Code+Pro&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Comic+Neue&family=Dangrek&family=Dosis&family=Lemonada&family=MuseoModerno&family=Nabla&family=Source+Code+Pro&display=swap");
 
-@keyframes zoom {
-  0% {
-    translate: 0em;
-    scale: 1;
-    opacity: 0;
+@media (max-width: 450px) {
+  @keyframes zoom {
+    0% {
+      translate: -1em;
+      scale: 0.7;
+      opacity: 0;
+    }
+    50% {
+      translate: 3em;
+      scale: 1;
+      opacity: 1;
+    }
+    100% {
+      translate: -1em;
+      scale: 0.7;
+      opacity: 0;
+    }
   }
-  50% {
-    translate: 5em;
-    scale: 1.6;
-    opacity: 1;
+}
+
+@media (min-width: 451px) {
+  @keyframes zoom {
+    0% {
+      translate: 0m;
+      scale: 1;
+      opacity: 0;
+    }
+    50% {
+      translate: 4.5em;
+      scale: 1.5;
+      opacity: 1;
+    }
+    100% {
+      translate: 0em;
+      scale: 1;
+      opacity: 0;
+    }
   }
-  100% {
-    translate: 0em;
-    scale: 1;
-    opacity: 0;
-  }
+}
+
+a.navbar-brand {
+  font-family: "Nabla", cursive;
+  user-select: none;
+  animation: zoom 5s infinite;
+  -webkit-animation: zoom 5s infinite;
 }
 
 body {
@@ -28,14 +57,41 @@ body > .container {
   margin-bottom: 5em;
 }
 
-a.navbar-brand {
-  font-family: "Nabla", cursive;
-  user-select: none;
-  animation: zoom 5s infinite;
-  -webkit-animation: zoom 5s infinite;
+ul li button.nav-link {
+  background-color: rgb(167, 227, 255) !important;
+  color: black;
+  font-family: "MuseoModerno", cursive;
+  transition: 0.4s;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -ms-transition: 0.4s;
+  -o-transition: 0.4s;
 }
 
-ul li a {
+ul li button.nav-link:hover,
+ul li button.nav-link.active:hover {
+  scale: 1.3;
+  background-color: midnightblue !important;
+  color: beige;
+  transition: 0.4s;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -ms-transition: 0.4s;
+  -o-transition: 0.4s;
+}
+
+ul li button.nav-link.active {
+  background-color: black !important;
+  color: beige;
+  transition: 0.4s;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -ms-transition: 0.4s;
+  -o-transition: 0.4s;
+}
+
+ul li a.nav-link {
+  font-family: "Lemonada", cursive;
   color: whitesmoke !important;
   transition: 0.6s;
   -webkit-transition: 0.6s;
@@ -44,26 +100,36 @@ ul li a {
   -o-transition: 0.6s;
 }
 
-ul li a:hover,
-ul li a.active:hover {
-  background-color: cyan;
+ul li a.nav-link:hover,
+ul li a.nav-link.active:hover {
+  background-color: rgb(29, 50, 113);
   scale: 1.3;
-  color: gray !important;
+  color: lightgoldenrodyellow !important;
+  border-radius: 0.5em;
   transition: 0.6s;
   -webkit-transition: 0.6s;
   -moz-transition: 0.6s;
   -ms-transition: 0.6s;
   -o-transition: 0.6s;
+  -webkit-border-radius: 0.5em;
+  -moz-border-radius: 0.5em;
+  -ms-border-radius: 0.5em;
+  -o-border-radius: 0.5em;
 }
 
-ul li a.active {
-  background-color: lightskyblue;
+ul li a.nav-link.active {
+  background-color: rgb(200, 225, 240);
   color: black !important;
+  border-radius: 1em;
   transition: 0.6s;
   -webkit-transition: 0.6s;
   -moz-transition: 0.6s;
   -ms-transition: 0.6s;
   -o-transition: 0.6s;
+  -webkit-border-radius: 1em;
+  -moz-border-radius: 1em;
+  -ms-border-radius: 1em;
+  -o-border-radius: 1em;
 }
 
 @keyframes typing {
@@ -97,46 +163,15 @@ tbody {
 
 .card {
   font-family: "Dosis", sans-serif;
+  background-image: url("../img/kartu.png");
+  background-repeat: no-repeat;
+  background-position: 0em -2.5em;
+  background-size: cover;
+  align-items: center;
 }
 
 .form-check > label {
   font-family: "Bungee Spice", cursive;
-}
-
-ul li button {
-  margin-right: 0.3em;
-}
-
-ul li button.nav-link {
-  background-color: bisque !important;
-  color: black;
-  transition: 0.4s;
-  -webkit-transition: 0.4s;
-  -moz-transition: 0.4s;
-  -ms-transition: 0.4s;
-  -o-transition: 0.4s;
-}
-
-ul li button.nav-link:hover,
-ul li button.nav-link.active:hover {
-  scale: 1.3;
-  background-color: midnightblue !important;
-  color: beige;
-  transition: 0.4s;
-  -webkit-transition: 0.4s;
-  -moz-transition: 0.4s;
-  -ms-transition: 0.4s;
-  -o-transition: 0.4s;
-}
-
-ul li button.nav-link.active {
-  background-color: black !important;
-  color: beige;
-  transition: 0.4s;
-  -webkit-transition: 0.4s;
-  -moz-transition: 0.4s;
-  -ms-transition: 0.4s;
-  -o-transition: 0.4s;
 }
 
 .ketik p {
@@ -145,7 +180,37 @@ ul li button.nav-link.active {
   white-space: nowrap;
   margin: 0 auto;
   letter-spacing: 0.15em;
-  animation: typing 2.2s steps(40, end), blink-caret 0.75s step-start infinite;
   font-family: "Comic Neue", cursive;
+  animation: typing 2.2s steps(40, end), blink-caret 0.75s step-start infinite;
   -webkit-animation: typing 2.2s steps(40, end), blink-caret 0.75s step-start infinite;
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+a#instagram {
+  scale: 1;
+  animation: fadein 5s;
+  animation-delay: 5s;
+  transition: 0.4s;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -ms-transition: 0.4s;
+  -o-transition: 0.4s;
+  -webkit-animation: fadein 5s;
+}
+
+a#instagram:hover {
+  scale: 1.3;
+  transition: 0.4s;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -ms-transition: 0.4s;
+  -o-transition: 0.4s;
 }

@@ -24,4 +24,13 @@ $(document).ready(function () {
   $("#harian").click(function () {
     $("#konten").load("harian.html");
   });
+
+  $("a#instagram").hover(
+    function () {
+      $("img#michael").attr("src", "img/instagram.png").fadeTo("slow");
+    },
+    function () {
+      $("img#michael").attr("src", "img/michael.jpg").fadeTo("slow");
+    }
+  );
 });
