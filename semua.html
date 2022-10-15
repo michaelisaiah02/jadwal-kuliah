@@ -1,6 +1,33 @@
-<div class="form-check form-switch fs-3">
-  <input class="form-check-input" type="checkbox" role="switch" id="tampilan" />
-  <label class="form-check-label" for="tampilan">Tampilan Tabel</label>
+<div class="col-lg-4 d-flex d-inline mb-3">
+  <div class="form-check form-switch fs-3 bg-dark rounded-pill" id="semua-jadwal">
+    <input class="form-check-input text-bg-warning" type="checkbox" role="switch" id="tampilan" />
+    <label class="form-check-label" for="tampilan">Tampilan Tabel</label>
+  </div>
+</div>
+<div class="col-lg-4 d-flex d-inline mb-3">
+  <div class="dropend">
+    <button type="button" class="btn btn-lg btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Menu</button>
+    <ul class="dropdown-menu dropdown-menu-dark" id="menu">
+      <div class="mb-3 d-flex justify-content-center">
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input bg-warning bg-opacity-50" id="waktu" checked />
+          <label class="form-check-label" for="waktu">Waktu</label>
+        </div>
+      </div>
+      <div class="mb-3 d-flex justify-content-center">
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input bg-warning bg-opacity-50" id="ruang" checked />
+          <label class="form-check-label" for="ruang">Ruang</label>
+        </div>
+      </div>
+      <div class="mb-3 d-flex justify-content-center">
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input bg-warning bg-opacity-50" id="dosen" checked />
+          <label class="form-check-label" for="dosen">Dosen</label>
+        </div>
+      </div>
+    </ul>
+  </div>
 </div>
 <div class="tab-content" id="nav-tabContent">
   <div class="tab-pane fade show active" id="tampil" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0"></div>
@@ -8,7 +35,7 @@
 <script>
   $(document).ready(function () {
     $("#tampil").load("tampilan/tabel.html");
-    $("input").change(function () {
+    $("input#tampilan").change(function () {
       var input = $(this);
       if (input.is(":checked")) {
         $("label").html("Tampilan Kartu");
