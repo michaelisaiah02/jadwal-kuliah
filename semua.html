@@ -6,23 +6,23 @@
 </div>
 <div class="col-lg-4 d-flex d-inline mb-3">
   <div class="dropend">
-    <button type="button" class="btn btn-lg btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Menu</button>
+    <button type="button" class="btn btn-lg btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" id="button-menu">Menu</button>
     <ul class="dropdown-menu dropdown-menu-dark" id="menu">
       <div class="mb-3 d-flex justify-content-center">
         <div class="form-check">
-          <input type="checkbox" class="form-check-input bg-warning bg-opacity-50" id="waktu" checked />
+          <input type="checkbox" class="form-check-input bg-warning bg-opacity-50" id="cek-waktu" checked />
           <label class="form-check-label" for="waktu">Waktu</label>
         </div>
       </div>
       <div class="mb-3 d-flex justify-content-center">
         <div class="form-check">
-          <input type="checkbox" class="form-check-input bg-warning bg-opacity-50" id="ruang" checked />
+          <input type="checkbox" class="form-check-input bg-warning bg-opacity-50" id="cek-ruang" checked />
           <label class="form-check-label" for="ruang">Ruang</label>
         </div>
       </div>
       <div class="mb-3 d-flex justify-content-center">
         <div class="form-check">
-          <input type="checkbox" class="form-check-input bg-warning bg-opacity-50" id="dosen" checked />
+          <input type="checkbox" class="form-check-input bg-warning bg-opacity-50" id="cek-dosen" checked />
           <label class="form-check-label" for="dosen">Dosen</label>
         </div>
       </div>
@@ -35,14 +35,108 @@
 <script>
   $(document).ready(function () {
     $("#tampil").load("tampilan/tabel.html");
+
+    // Ubah Tampilan
     $("input#tampilan").change(function () {
       var input = $(this);
       if (input.is(":checked")) {
-        $("label").html("Tampilan Kartu");
+        $("label[for='tampilan']").html("Tampilan Kartu");
         $("#tampil").load("tampilan/kartu.html");
       } else {
-        $("label").html("Tampilan Tabel");
+        $("label[for='tampilan']").html("Tampilan Tabel");
         $("#tampil").load("tampilan/tabel.html");
+      }
+    });
+
+    // Tampilan tabel menu
+    $("#button-menu").hover(
+      function () {
+        $("#button-menu").addClass("show");
+        $(".dropend ul#menu").addClass("show");
+      },
+      function () {
+        if ($(".dropend ul#menu").is(":hover")) {
+          $(".dropend ul#menu").hover(
+            function () {
+              $("#button-menu").addClass("show");
+              $(".dropend ul#menu").addClass("show");
+            },
+            function () {
+              $("#button-menu").removeClass("show");
+              $(".dropend ul#menu").removeClass("show");
+            }
+          );
+        } else {
+          $("#button-menu").removeClass("show");
+          $(".dropend ul#menu").removeClass("show");
+        }
+      }
+    );
+
+    $("input#cek-waktu").change(function () {
+      var input = $(this);
+      if (!input.is(":checked")) {
+        $("#waktu").addClass("visually-hidden");
+        $("#waktu1").addClass("visually-hidden");
+        $("#waktu2").addClass("visually-hidden");
+        $("#waktu3").addClass("visually-hidden");
+        $("#waktu4").addClass("visually-hidden");
+        $("#waktu5").addClass("visually-hidden");
+        $("#waktu6").addClass("visually-hidden");
+        $("#waktu7").addClass("visually-hidden");
+      } else {
+        $("#waktu").removeClass("visually-hidden");
+        $("#waktu1").removeClass("visually-hidden");
+        $("#waktu2").removeClass("visually-hidden");
+        $("#waktu3").removeClass("visually-hidden");
+        $("#waktu4").removeClass("visually-hidden");
+        $("#waktu5").removeClass("visually-hidden");
+        $("#waktu6").removeClass("visually-hidden");
+        $("#waktu7").removeClass("visually-hidden");
+      }
+    });
+    $("input#cek-ruang").change(function () {
+      var input = $(this);
+      if (!input.is(":checked")) {
+        $("#ruang").addClass("visually-hidden");
+        $("#ruang1").addClass("visually-hidden");
+        $("#ruang2").addClass("visually-hidden");
+        $("#ruang3").addClass("visually-hidden");
+        $("#ruang4").addClass("visually-hidden");
+        $("#ruang5").addClass("visually-hidden");
+        $("#ruang6").addClass("visually-hidden");
+        $("#ruang7").addClass("visually-hidden");
+      } else {
+        $("#ruang").removeClass("visually-hidden");
+        $("#ruang1").removeClass("visually-hidden");
+        $("#ruang2").removeClass("visually-hidden");
+        $("#ruang3").removeClass("visually-hidden");
+        $("#ruang4").removeClass("visually-hidden");
+        $("#ruang5").removeClass("visually-hidden");
+        $("#ruang6").removeClass("visually-hidden");
+        $("#ruang7").removeClass("visually-hidden");
+      }
+    });
+    $("input#cek-dosen").change(function () {
+      var input = $(this);
+      if (!input.is(":checked")) {
+        $("#dosen").addClass("visually-hidden");
+        $("#dosen1").addClass("visually-hidden");
+        $("#dosen2").addClass("visually-hidden");
+        $("#dosen3").addClass("visually-hidden");
+        $("#dosen4").addClass("visually-hidden");
+        $("#dosen5").addClass("visually-hidden");
+        $("#dosen6").addClass("visually-hidden");
+        $("#dosen7").addClass("visually-hidden");
+      } else {
+        $("#dosen").removeClass("visually-hidden");
+        $("#dosen1").removeClass("visually-hidden");
+        $("#dosen2").removeClass("visually-hidden");
+        $("#dosen3").removeClass("visually-hidden");
+        $("#dosen4").removeClass("visually-hidden");
+        $("#dosen5").removeClass("visually-hidden");
+        $("#dosen6").removeClass("visually-hidden");
+        $("#dosen7").removeClass("visually-hidden");
       }
     });
   });
