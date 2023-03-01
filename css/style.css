@@ -125,7 +125,7 @@ ul li a.nav-link {
 
 ul li a.nav-link:hover,
 ul li a.nav-link.active:hover {
-  background-color: rgb(29, 50, 113);
+  background-color: rgb(74, 108, 209);
   scale: 1.3;
   color: lightgoldenrodyellow !important;
   border-radius: 0.5em;
@@ -153,6 +153,21 @@ ul li a.nav-link.active {
   -moz-border-radius: 1em;
   -ms-border-radius: 1em;
   -o-border-radius: 1em;
+}
+
+.dropdown-menu {
+  background-color: lightskyblue;
+  font-family: "Lemonada", cursive;
+  font-weight: bold;
+}
+
+/* Mengubah warna scrollbar */
+::-webkit-scrollbar {
+  background-color: #214fb9;
+  width: 5px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #c4d0f1;
 }
 
 thead {

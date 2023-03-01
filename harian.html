@@ -80,10 +80,25 @@
     default:
       break;
   }
-  $("#senin").load("hari/senin.html");
-  $("#selasa").load("hari/selasa.html");
-  $("#rabu").load("hari/rabu.html");
-  $("#kamis").load("hari/kamis.html");
-  $("#jumat").load("hari/jumat.html");
-  $("#sabtu").load("hari/sabtu.html");
+  // ambil data semester aktif
+  var activeSemester = localStorage.getItem("activeSemester") || "semester5";
+  $("ul li a#" + activeSemester).addClass("active");
+  $("#senin").load(activeSemester + "/hari/senin.html");
+  $("#selasa").load(activeSemester + "/hari/selasa.html");
+  $("#rabu").load(activeSemester + "/hari/rabu.html");
+  $("#kamis").load(activeSemester + "/hari/kamis.html");
+  $("#jumat").load(activeSemester + "/hari/jumat.html");
+  $("#sabtu").load(activeSemester + "/hari/sabtu.html");
+
+  $("#semester1, #semester2, #semester3, #semester4, #semester5, #semester6").on("click", function () {
+    activeSemester = $(this).attr("id");
+    $("ul li a.dropdown-item").removeClass("active");
+    $(this).addClass("active");
+    $("#senin").load(activeSemester + "/hari/senin.html");
+    $("#selasa").load(activeSemester + "/hari/selasa.html");
+    $("#rabu").load(activeSemester + "/hari/rabu.html");
+    $("#kamis").load(activeSemester + "/hari/kamis.html");
+    $("#jumat").load(activeSemester + "/hari/jumat.html");
+    $("#sabtu").load(activeSemester + "/hari/sabtu.html");
+  });
 </script>

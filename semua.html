@@ -34,17 +34,27 @@
 </div>
 <script>
   $(document).ready(function () {
-    $("#tampil").load("tampilan/tabel.html");
+    // ambil data semester aktif
+    var activeSemester = localStorage.getItem("activeSemester") || "semester5";
+    $("ul li a#" + activeSemester).addClass("active");
+    $("#tampil").load(activeSemester + "/tampilan/tabel.html");
+
+    $("#semester1, #semester2, #semester3, #semester4, #semester5, #semester6").on("click", function () {
+      activeSemester = $(this).attr("id");
+      $("ul li a.dropdown-item").removeClass("active");
+      $(this).addClass("active");
+      $("#tampil").load(activeSemester + "/tampilan/tabel.html");
+    });
 
     // Ubah Tampilan
     $("input#tampilan").change(function () {
       var input = $(this);
       if (input.is(":checked")) {
         $("label[for='tampilan']").html("Tampilan Kartu");
-        $("#tampil").load("tampilan/kartu.html");
+        $("#tampil").load(activeSemester + "/tampilan/kartu.html");
       } else {
         $("label[for='tampilan']").html("Tampilan Tabel");
-        $("#tampil").load("tampilan/tabel.html");
+        $("#tampil").load(activeSemester + "/tampilan/tabel.html");
       }
     });
 
@@ -84,6 +94,7 @@
         $("#waktu5").addClass("visually-hidden");
         $("#waktu6").addClass("visually-hidden");
         $("#waktu7").addClass("visually-hidden");
+        $("#waktu8").addClass("visually-hidden");
       } else {
         $("#waktu").removeClass("visually-hidden");
         $("#waktu1").removeClass("visually-hidden");
@@ -93,6 +104,7 @@
         $("#waktu5").removeClass("visually-hidden");
         $("#waktu6").removeClass("visually-hidden");
         $("#waktu7").removeClass("visually-hidden");
+        $("#waktu8").removeClass("visually-hidden");
       }
     });
     $("input#cek-ruang").change(function () {
@@ -106,6 +118,7 @@
         $("#ruang5").addClass("visually-hidden");
         $("#ruang6").addClass("visually-hidden");
         $("#ruang7").addClass("visually-hidden");
+        $("#ruang8").addClass("visually-hidden");
       } else {
         $("#ruang").removeClass("visually-hidden");
         $("#ruang1").removeClass("visually-hidden");
@@ -115,6 +128,7 @@
         $("#ruang5").removeClass("visually-hidden");
         $("#ruang6").removeClass("visually-hidden");
         $("#ruang7").removeClass("visually-hidden");
+        $("#ruang8").removeClass("visually-hidden");
       }
     });
     $("input#cek-dosen").change(function () {
@@ -128,6 +142,7 @@
         $("#dosen5").addClass("visually-hidden");
         $("#dosen6").addClass("visually-hidden");
         $("#dosen7").addClass("visually-hidden");
+        $("#dosen8").addClass("visually-hidden");
       } else {
         $("#dosen").removeClass("visually-hidden");
         $("#dosen1").removeClass("visually-hidden");
@@ -137,6 +152,7 @@
         $("#dosen5").removeClass("visually-hidden");
         $("#dosen6").removeClass("visually-hidden");
         $("#dosen7").removeClass("visually-hidden");
+        $("#dosen8").removeClass("visually-hidden");
       }
     });
   });
