@@ -63,4 +63,16 @@ $(document).ready(function () {
       $("img#michael").attr("src", "img/michael.jpg").fadeTo("slow");
     }
   );
+
+  // Cari tombol reset
+  var resetButton = $("#reset");
+
+  // Tambahkan event listener
+  resetButton.on("click", function () {
+    // Hapus data dari localStorage
+    localStorage.clear();
+
+    // Refresh halaman
+    location.reload();
+  });
 });
