@@ -35,7 +35,7 @@
 <script>
   $(document).ready(function () {
     // ambil data semester aktif
-    var activeSemester = localStorage.getItem("activeSemester") || "semester5";
+    var activeSemester = localStorage.getItem("activeSemester") || "semester6";
     $("ul li a#" + activeSemester).addClass("active");
     $("#tampil").load(activeSemester + "/tampilan/tabel.html");
 
