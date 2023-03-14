@@ -39,7 +39,7 @@
     $("ul li a#" + activeSemester).addClass("active");
     $("#tampil").load(activeSemester + "/tampilan/tabel.html");
 
-    $("#semester1, #semester2, #semester3, #semester4, #semester5, #semester6").on("click", function () {
+    $("#semester1, #semester2, #semester3, #semester4, #semester5, #semester6, #semester7, #semester8").on("click", function () {
       activeSemester = $(this).attr("id");
       $("ul li a.dropdown-item").removeClass("active");
       $(this).addClass("active");
