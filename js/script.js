@@ -1,8 +1,17 @@
 $(document).ready(function () {
-  $("#semester1, #semester2, #semester3, #semester4, #semester5, #semester6").on("click", function () {
+  $("#semester1, #semester2, #semester3, #semester4, #semester5, #semester6, #semester7, #semester8").on("click", function () {
     activeSemester = $(this).attr("id");
     localStorage.setItem("activeSemester", activeSemester);
-    if (activeSemester === "semester1" || activeSemester === "semester2" || activeSemester === "semester3" || activeSemester === "semester4" || activeSemester === "semester5" || activeSemester === "semester6") {
+    if (
+      activeSemester === "semester1" ||
+      activeSemester === "semester2" ||
+      activeSemester === "semester3" ||
+      activeSemester === "semester4" ||
+      activeSemester === "semester5" ||
+      activeSemester === "semester6" ||
+      activeSemester === "semester7" ||
+      activeSemester === "semester8"
+    ) {
       $("ul li a.dropdown-item").removeClass("active");
       $(this).addClass("active");
     } else if ($(this).attr("id") === "semua") {
@@ -22,7 +31,9 @@ $(document).ready(function () {
       $(this).attr("id") === "semester3" ||
       $(this).attr("id") === "semester4" ||
       $(this).attr("id") === "semester5" ||
-      $(this).attr("id") === "semester6"
+      $(this).attr("id") === "semester6" ||
+      $(this).attr("id") === "semester7" ||
+      $(this).attr("id") === "semester8"
     ) {
       // jangan lakukan apapun
     } else if ($(this).attr("id") === "semua") {
