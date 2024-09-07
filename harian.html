@@ -81,7 +81,7 @@
       break;
   }
   // ambil data semester aktif
-  var activeSemester = localStorage.getItem("activeSemester") || "semester7";
+  var activeSemester = localStorage.getItem("activeSemester") || "semester8";
   $("ul li a#" + activeSemester).addClass("active");
   $("#senin").load(activeSemester + "/hari/senin.html");
   $("#selasa").load(activeSemester + "/hari/selasa.html");
